@@ -1,6 +1,4 @@
-"""
-Stick-breaking Attention - 官方Triton实现
-"""
+
 
 from stickbreaking_attention.sb_attn import sb_attn
 import math
@@ -31,9 +29,7 @@ def stickbreaking_attention_std(
     
     if sm_scale is None:
         sm_scale = 1.0 / math.sqrt(D)
-    
-    # 官方Triton实现
-    # 返回 (output, remainder)
+   
     out, rem = sb_attn(
         q, k, v, 
         inv_temp=sm_scale,
